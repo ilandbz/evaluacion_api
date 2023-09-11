@@ -35,7 +35,7 @@
 <body class="login-page bg-body-secondary">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/">EVALUACION POSTULANTES</a>
+            <a href="/">EVALUACION</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
