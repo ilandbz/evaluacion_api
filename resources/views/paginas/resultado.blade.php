@@ -17,7 +17,7 @@
 								<div class="row">
 									<div class="col-md-8">
 										<div class="alert alert-info">
-											<h3>POSTULANTE : {{ $examenalumno->alumno['apenom'] }}</h3>
+											<h3>ALUMNO : {{ $examenalumno->alumno['apenom'] }}</h3>
 											<h3>FECHA HORA DE INICIO : {{ $examenalumno['fecha_hora'] }}</h3>
 										</div>
 									</div>
