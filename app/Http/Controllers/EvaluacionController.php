@@ -37,12 +37,12 @@ class EvaluacionController extends Controller
 
     public function examen()
     {
-        $alumno=Alumno::where('dni', Session::get('dni'))->first();
-        $data['alumno'] = $alumno;
-        $examen=Examen::where('id', 1)->first();
-        $data['examen']=$examen;
-        $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
-        return view('paginas/examen', $data);
+        // $alumno=Alumno::where('dni', Session::get('dni'))->first();
+        // $data['alumno'] = $alumno;
+        // $examen=Examen::where('id', 1)->first();
+        // $data['examen']=$examen;
+        // $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
+        // return view('paginas/examen', $data);
     }
 
     /**
