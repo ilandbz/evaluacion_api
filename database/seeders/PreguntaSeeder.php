@@ -418,32 +418,6 @@ class PreguntaSeeder extends Seeder
                 ]
             ],
             [
-                'text' => '¿Qué factor influye en la elección de una metodología de desarrollo de software?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Naturaleza del proyecto, experiencia del equipo y requisitos del proyecto.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Naturaleza del proyecto, experiencia del equipo y requisitos del proyecto.'],
-                    ['cod' => 'b', 'text' => 'Tamaño del equipo exclusivamente.'],
-                    ['cod' => 'c', 'text' => 'Preferencia personal del líder del proyecto.'],
-                    ['cod' => 'd', 'text' => 'Disponibilidad de recursos financieros.'],
-                ]
-            ],
-            [
-                'text' => '¿Cuál es una desventaja general de las metodologías ágiles?',
-                'examen_id' => $id2,
-                'answer' => 'b',
-                'correct_answer' => 'Puede haber resistencia al cambio por parte del equipo.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Mayor adaptabilidad a cambios.'],
-                    ['cod' => 'b', 'text' => 'Puede haber resistencia al cambio por parte del equipo.'],
-                    ['cod' => 'c', 'text' => 'Mayor énfasis en la documentación.'],
-                    ['cod' => 'd', 'text' => 'Requiere una planificación detallada.'],
-                ]
-            ],
-            [
                 'text' => '¿En qué se enfoca el modelo en V en comparación con el modelo en cascada?',
                 'examen_id' => $id2,
                 'answer' => 'b',
@@ -467,19 +441,6 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Facilidad de depuración.'],
                     ['cod' => 'c', 'text' => 'Eficiencia en tiempo de ejecución.'],
                     ['cod' => 'd', 'text' => 'Mayor flexibilidad.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué es un compilador en el contexto de lenguajes de programación?',
-                'examen_id' => $id2,
-                'answer' => 'b',
-                'correct_answer' => 'Un programa que traduce código fuente a lenguaje de máquina.',
-                'category' => 'LENGUAJES DE PROGRAMACIÓN',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Un intérprete.'],
-                    ['cod' => 'b', 'text' => 'Un programa que traduce código fuente a lenguaje de máquina.'],
-                    ['cod' => 'c', 'text' => 'Un depurador.'],
-                    ['cod' => 'd', 'text' => 'Una biblioteca estándar.'],
                 ]
             ],
             [
@@ -730,6 +691,80 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'd', 'text' => 'Simplifica la gestión de bases de datos.'],
                 ]
             ],
+
+            //-------------------------------------//
+            [
+                'text' => '¿Qué significa ASN.1 en el contexto de la Capa de Enlace de Datos?',
+                'examen_id' => $id,
+                'answer' => 'b',
+                'correct_answer' => 'Abstract Syntax Notation One (Notación Sintáctica Abstracta Uno)',
+                'category' => 'Capa de Enlace de Datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Análisis de Sistemas de Red'],
+                    ['cod' => 'b', 'text' => 'Abstract Syntax Notation One (Notación Sintáctica Abstracta Uno)'],
+                    ['cod' => 'c', 'text' => 'Advanced Security Network'],
+                    ['cod' => 'd', 'text' => 'Application System Network'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes NO es un tipo de datos en ASN.1?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'FLOAT',
+                'category' => 'Capa de Enlace de Datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'INTEGER'],
+                    ['cod' => 'b', 'text' => 'BOOLEAN'],
+                    ['cod' => 'c', 'text' => 'FLOAT'],
+                    ['cod' => 'd', 'text' => 'OCTET STRING'],
+                ]
+            ],
+            [
+                'text' => '¿Qué función tiene la codificación BER en la Capa de Enlace de Datos?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'Codificar y decodificar datos ASN.1 para su transmisión',
+                'category' => 'Capa de Enlace de Datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Generar códigos de barras'],
+                    ['cod' => 'b', 'text' => 'Enviar mensajes de correo electrónico'],
+                    ['cod' => 'c', 'text' => 'Codificar y decodificar datos ASN.1 para su transmisión'],
+                    ['cod' => 'd', 'text' => 'Realizar operaciones matemáticas en los datos'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es uno de los beneficios de la codificación BER en la comunicación de redes?',
+                'examen_id' => $id,
+                'answer' => 'b',
+                'correct_answer' => 'Garantiza la interpretación precisa de los datos independientemente de la plataforma',
+                'category' => 'Comunicación de Redes',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Incrementa la complejidad de los datos'],
+                    ['cod' => 'b', 'text' => 'Garantiza la interpretación precisa de los datos independientemente de la plataforma'],
+                    ['cod' => 'c', 'text' => 'Reduce la eficiencia de la transmisión de datos'],
+                    ['cod' => 'd', 'text' => 'Limita la compatibilidad entre sistemas'],
+                ]
+            ],
+            [
+                'text' => '¿Qué se entiende por "identificador de tipo" en la codificación BER?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'Un número único que identifica el tipo de datos ASN.1',
+                'category' => 'Codificación BER',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'El nombre del protocolo utilizado'],
+                    ['cod' => 'b', 'text' => 'El número de puerto en el que se envían los datos'],
+                    ['cod' => 'c', 'text' => 'Un número único que identifica el tipo de datos ASN.1'],
+                    ['cod' => 'd', 'text' => 'El código de país del dispositivo de origen'],
+                ]
+            ]
+
+
+
+
+            
+
+
  
         ];
 

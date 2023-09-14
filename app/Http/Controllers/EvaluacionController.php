@@ -102,47 +102,54 @@ class EvaluacionController extends Controller
         //
     }
     function resolver(Request $request){
-		$preguntas= $request->pregunta_marcacion;
-		$puntajetotal = 0; 
-		$incorrectas =0;
-		$miarreglo=null;
-		foreach ($preguntas as $fila) {
-			$marcado = $fila['marcado'] ?? "NINGUNO";
-			$row['punto']=0;
-			$pregunta = Pregunta::find($fila['idpregunta']);
-			if($pregunta['correct_answer']==$marcado){
-				$puntajetotal+=$pregunta['punto'];
-				$row['punto']=$pregunta['punto'];
-			}else{
-				$incorrectas++;
+        $alumno=Alumno::where('id', Auth::user()->id)->first();
+
+		$examenalumno =ExamenAlumno::where('alumno_id', $alumno->id)->where('examen_id', $request->idexamen)->first();
+		if($examenalumno){
+			echo 'YA HABIAS RENDIDO EL EXAMEN, JOVEN  😢';
+		}else{
+			$preguntas= $request->pregunta_marcacion;
+			$puntajetotal = 0; 
+			$incorrectas =0;
+			$miarreglo=null;
+			foreach ($preguntas as $fila) {
+				$marcado = $fila['marcado'] ?? "NINGUNO";
+				$row['punto']=0;
+				$pregunta = Pregunta::find($fila['idpregunta']);
+				if($pregunta['correct_answer']==$marcado){
+					$puntajetotal+=$pregunta['punto'];
+					$row['punto']=$pregunta['punto'];
+				}else{
+					$incorrectas++;
+				}
+				$row['descripcion']=$pregunta['text'];
+				$row['marcado']=$marcado;
+				$row['respuesta']=$pregunta['correct_answer'];
+				$miarreglo[]=$row;
 			}
-			$row['descripcion']=$pregunta['text'];
-			$row['marcado']=$marcado;
-			$row['respuesta']=$pregunta['correct_answer'];
-			$miarreglo[]=$row;
-		}
-		$examenalumno = ExamenAlumno::create([
-			'alumno_id' => $request->alumno_id,
-			'examen_id' => $request->idexamen,
-			'tiempo_rendido' => $request->tiempo_rendicion,
-			'fecha_hora'	=> date('Y-m-d'),
-			'totalincorrectas' => $incorrectas,
-			'nota' => $puntajetotal,
-			'estado' => $puntajetotal>=13 ? 'APROBADO' : 'DESAPROBADO',
-		]);
-		foreach($miarreglo as $fila){
-			AlternativaMarcada::firstOrCreate([
-				'examen_alumno_id' => $examenalumno->id,
-				'pregunta' => $fila['descripcion'],
-				'respuesta' => $fila['respuesta'],
-				'marco' => $fila['marcado'],
-				'puntos'	=> $fila['punto']
+			$examenalumno = ExamenAlumno::create([
+				'alumno_id' => $request->alumno_id,
+				'examen_id' => $request->idexamen,
+				'tiempo_rendido' => $request->tiempo_rendicion,
+				'fecha_hora'	=> date('Y-m-d'),
+				'totalincorrectas' => $incorrectas,
+				'nota' => $puntajetotal,
+				'estado' => $puntajetotal>=13 ? 'APROBADO' : 'DESAPROBADO',
 			]);
+			foreach($miarreglo as $fila){
+				AlternativaMarcada::firstOrCreate([
+					'examen_alumno_id' => $examenalumno->id,
+					'pregunta' => $fila['descripcion'],
+					'respuesta' => $fila['respuesta'],
+					'marco' => $fila['marcado'],
+					'puntos'	=> $fila['punto']
+				]);
+			}
+			return redirect()->route('examen-resuelto',
+			[
+				'id' => $examenalumno->id
+			])->with('success', '¡Formulario enviado correctamente!');
 		}
-		//return redirect('examen-resuelto?id='.$examenalumno->id);
-
-		return redirect()->route('examen-resuelto',  ['id' => $examenalumno->id])->with('success', '¡Formulario enviado correctamente!');
-
 	}
 	function register_alumno(){
 		$especialidades = Especialidad::get();
