@@ -17,7 +17,7 @@ class PreguntaSeeder extends Seeder
     {
         $id= Examen::where('titulo', 'PRACTICA CALIFICADA 2 SISTEMAS OPERATIVOS')->value('id'); 
         $id2= Examen::where('titulo', 'PRACTICA CALIFICADA 2 SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS')->value('id'); 
-
+        $id3= Examen::where('titulo', 'PRACTICA CALIFICADA 2 HERRAMIENTAS DE GESTION DE REDES')->value('id');
         $preguntas = [ 
             [
                 'text' => 'Cuál es la función principal del núcleo (kernel) en un sistema operativo?',
@@ -80,6 +80,18 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Planificador de procesos.'],
                     ['cod' => 'c', 'text' => 'Sistema de archivos.'],
                     ['cod' => 'd', 'text' => 'Sistema de red'],
+                ]
+            ],
+            [
+                'text' => 'Que software no se utiliza para gestionar una base de datos?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'SQL.',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'SQL YOG'],
+                    ['cod' => 'b', 'text' => 'XAMPP'],
+                    ['cod' => 'c', 'text' => 'SQL.'],
+                    ['cod' => 'd', 'text' => 'WORKBENCH'],
                 ]
             ],
             [
@@ -354,19 +366,6 @@ class PreguntaSeeder extends Seeder
                 ]
             ],
             [
-                'text' => '¿Qué define al enfoque Scrum en el desarrollo de software?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Ciclos de desarrollo llamados "sprints".',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Ciclos de desarrollo llamados "sprints".'],
-                    ['cod' => 'b', 'text' => 'Priorización exclusiva del diseño.'],
-                    ['cod' => 'c', 'text' => 'Uso exclusivo de programación en parejas.'],
-                    ['cod' => 'd', 'text' => 'Ausencia de iteraciones.'],
-                ]
-            ],
-            [
                 'text' => 'Cuál es una ventaja de las metodologías ágiles en comparación con las tradicionales?',
                 'examen_id' => $id2,
                 'answer' => 'b',
@@ -406,19 +405,6 @@ class PreguntaSeeder extends Seeder
                 ]
             ],
             [
-                'text' => '¿En qué se enfoca la metodología Kanban?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Visualización del flujo de trabajo y gestión de tareas.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Visualización del flujo de trabajo y gestión de tareas.'],
-                    ['cod' => 'b', 'text' => 'Entregas frecuentes en ciclos llamados sprints.'],
-                    ['cod' => 'c', 'text' => 'Planificación detallada y exhaustiva.'],
-                    ['cod' => 'd', 'text' => 'Uso de modelos en cascada exclusivamente.'],
-                ]
-            ],
-            [
                 'text' => '¿Qué implica la metodología DevOps en el desarrollo de software?',
                 'examen_id' => $id2,
                 'answer' => 'a',
@@ -429,19 +415,6 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Enfoque exclusivo en la planificación de proyectos.'],
                     ['cod' => 'c', 'text' => 'Ignorar la automatización de procesos.'],
                     ['cod' => 'd', 'text' => 'Uso de modelos en cascada.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué beneficio principal ofrece Lean Development en el desarrollo de software?',
-                'examen_id' => $id2,
-                'answer' => 'b',
-                'correct_answer' => 'Eliminación del desperdicio y maximización del valor entregado al cliente.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Mayor énfasis en la documentación.'],
-                    ['cod' => 'b', 'text' => 'Eliminación del desperdicio y maximización del valor entregado al cliente.'],
-                    ['cod' => 'c', 'text' => 'Mayor énfasis en la planificación detallada.'],
-                    ['cod' => 'd', 'text' => 'Uso exclusivo de metodologías ágiles.'],
                 ]
             ],
             [
@@ -481,32 +454,6 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Correspondencia entre fases de desarrollo y pruebas.'],
                     ['cod' => 'c', 'text' => 'Entregas frecuentes en sprints.'],
                     ['cod' => 'd', 'text' => 'Uso exclusivo de técnicas de orientación a objetos.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué es un beneficio común de las metodologías iterativas e incrementales?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Entrega temprana de funcionalidad y adaptación continua.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Entrega temprana de funcionalidad y adaptación continua.'],
-                    ['cod' => 'b', 'text' => 'Mayor énfasis en la planificación detallada.'],
-                    ['cod' => 'c', 'text' => 'Menor énfasis en la retroalimentación del cliente.'],
-                    ['cod' => 'd', 'text' => 'Requiere menos comunicación con los usuarios.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué es un desafío general de las metodologías ágiles?',
-                'examen_id' => $id2,
-                'answer' => 'c',
-                'correct_answer' => 'Requiere un cambio cultural y ajuste en la forma de trabajar.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Adaptación continua a cambios.'],
-                    ['cod' => 'b', 'text' => 'Mayor eficiencia en el desarrollo.'],
-                    ['cod' => 'c', 'text' => 'Requiere un cambio cultural y ajuste en la forma de trabajar.'],
-                    ['cod' => 'd', 'text' => 'Menor participación del equipo en la toma de decisiones.'],
                 ]
             ],
             [
@@ -549,45 +496,6 @@ class PreguntaSeeder extends Seeder
                 ]
             ],
             [
-                'text' => '¿Cuál es una ventaja de los lenguajes compilados en comparación con los interpretados?',
-                'examen_id' => $id2,
-                'answer' => 'c',
-                'correct_answer' => 'Mayor eficiencia en términos de rendimiento.',
-                'category' => 'LENGUAJES DE PROGRAMACIÓN',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Mayor portabilidad.'],
-                    ['cod' => 'b', 'text' => 'Facilidad de desarrollo.'],
-                    ['cod' => 'c', 'text' => 'Mayor eficiencia en términos de rendimiento.'],
-                    ['cod' => 'd', 'text' => 'Menos propensión a errores.'],
-                ]
-            ],
-            [
-                'text' => '¿Cuál es una característica clave de los lenguajes interpretados?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Mayor portabilidad.',
-                'category' => 'LENGUAJES DE PROGRAMACIÓN',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Mayor portabilidad.'],
-                    ['cod' => 'b', 'text' => 'Mayor optimización.'],
-                    ['cod' => 'c', 'text' => 'Menor uso de recursos.'],
-                    ['cod' => 'd', 'text' => 'Compilación previa.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué es una característica distintiva de las metodologías ágiles?',
-                'examen_id' => $id2,
-                'answer' => 'c',
-                'correct_answer' => 'Entregas frecuentes y adaptación continua.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Enfoque en la planificación detallada.'],
-                    ['cod' => 'b', 'text' => 'Uso de la cascada como modelo principal.'],
-                    ['cod' => 'c', 'text' => 'Entregas frecuentes y adaptación continua.'],
-                    ['cod' => 'd', 'text' => 'Énfasis en la documentación exhaustiva.'],
-                ]
-            ],
-            [
                 'text' => '¿Qué define al enfoque Scrum en el desarrollo de software?',
                 'examen_id' => $id2,
                 'answer' => 'a',
@@ -614,19 +522,6 @@ class PreguntaSeeder extends Seeder
                 ]
             ],
             [
-                'text' => '¿Qué implica el modelo en cascada en el desarrollo de software?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Fases secuenciales de desarrollo, donde cada fase debe completarse antes de la siguiente.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Fases secuenciales de desarrollo, donde cada fase debe completarse antes de la siguiente.'],
-                    ['cod' => 'b', 'text' => 'Entregas frecuentes de incrementos del producto.'],
-                    ['cod' => 'c', 'text' => 'Desarrollo iterativo con enfoque en la retroalimentación constante.'],
-                    ['cod' => 'd', 'text' => 'Uso exclusivo de técnicas de orientación a objetos.'],
-                ]
-            ],
-            [
                 'text' => '¿En qué se enfoca la metodología Kanban?',
                 'examen_id' => $id2,
                 'answer' => 'a',
@@ -650,19 +545,6 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Enfoque en la entrega en un único ciclo largo.'],
                     ['cod' => 'c', 'text' => 'Ignorar la retroalimentación del cliente.'],
                     ['cod' => 'd', 'text' => 'Mayor énfasis en la documentación que en el código.'],
-                ]
-            ],
-            [
-                'text' => '¿Qué implica la metodología DevOps en el desarrollo de software?',
-                'examen_id' => $id2,
-                'answer' => 'a',
-                'correct_answer' => 'Integración de desarrollo y operaciones para mejorar la calidad y la velocidad.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Integración de desarrollo y operaciones para mejorar la calidad y la velocidad.'],
-                    ['cod' => 'b', 'text' => 'Enfoque exclusivo en la planificación de proyectos.'],
-                    ['cod' => 'c', 'text' => 'Ignorar la automatización de procesos.'],
-                    ['cod' => 'd', 'text' => 'Uso de modelos en cascada.'],
                 ]
             ],
             [
@@ -702,19 +584,6 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'b', 'text' => 'Puede haber resistencia al cambio por parte del equipo.'],
                     ['cod' => 'c', 'text' => 'Mayor énfasis en la documentación.'],
                     ['cod' => 'd', 'text' => 'Requiere una planificación detallada.'],
-                ]
-            ],
-            [
-                'text' => '¿En qué se enfoca el modelo en V en comparación con el modelo en cascada?',
-                'examen_id' => $id2,
-                'answer' => 'b',
-                'correct_answer' => 'Correspondencia entre fases de desarrollo y pruebas.',
-                'category' => 'METODOLOGÍAS DE DESARROLLO',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Desarrollo en ciclos iterativos.'],
-                    ['cod' => 'b', 'text' => 'Correspondencia entre fases de desarrollo y pruebas.'],
-                    ['cod' => 'c', 'text' => 'Entregas frecuentes en sprints.'],
-                    ['cod' => 'd', 'text' => 'Uso exclusivo de técnicas de orientación a objetos.'],
                 ]
             ],
             [
@@ -795,19 +664,7 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'd', 'text' => 'C#.'],
                 ]
             ],
-            [
-                'text' => '¿Qué es un compilador en el contexto de lenguajes de programación?',
-                'examen_id' => $id2,
-                'answer' => 'b',
-                'correct_answer' => 'Un programa que traduce código fuente a lenguaje de máquina.',
-                'category' => 'LENGUAJES DE PROGRAMACIÓN',
-                'alternativas' => [
-                    ['cod' => 'a', 'text' => 'Un programa que ejecuta código fuente.'],
-                    ['cod' => 'b', 'text' => 'Un programa que traduce código fuente a lenguaje de máquina.'],
-                    ['cod' => 'c', 'text' => 'Un intérprete en tiempo real.'],
-                    ['cod' => 'd', 'text' => 'Una base de datos.'],
-                ]
-            ],
+
             [
                 'text' => '¿Cuál es una característica de los lenguajes interpretados?',
                 'examen_id' => $id2,

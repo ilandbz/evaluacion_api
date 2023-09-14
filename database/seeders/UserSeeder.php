@@ -52,6 +52,7 @@ class UserSeeder extends Seeder
             ['name' => '72768787', 'password' => Hash::make('72768787'), 'alumno_id' => Alumno::where('dni', '72768787')->value('id') ],
             ['name' => '70054320', 'password' => Hash::make('70054320'), 'alumno_id' => Alumno::where('dni', '70054320')->value('id') ],
             ['name' => '72293842', 'password' => Hash::make('72293842'), 'alumno_id' => Alumno::where('dni', '72293842')->value('id') ],
+            ['name' => '71578767', 'password' => Hash::make('71578767'), 'alumno_id' => Alumno::where('dni', '71578767')->value('id') ],            
         ];
 
         foreach ($usuarios as $user) {

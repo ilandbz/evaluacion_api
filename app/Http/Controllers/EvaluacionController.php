@@ -25,7 +25,7 @@ class EvaluacionController extends Controller
 		$fechaHoraActual = Carbon::now();
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
-        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->orderBy('fecha', 'desc')->first();
+        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
 		$data['examen']=$examen;
 		$examenalumno = Examenalumno::where('alumno_id', $alumno->id)->where('examen_id', $examen->id)->first();
 		if($examenalumno){
@@ -43,7 +43,7 @@ class EvaluacionController extends Controller
     {
         $alumno=Alumno::where('id', Auth::user()->id)->first();
         $data['alumno'] = $alumno;
-        $examen=Examen::where('id', 1)->first();
+        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
         $data['examen']=$examen;
         $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
         return view('paginas/examen', $data);
@@ -139,7 +139,10 @@ class EvaluacionController extends Controller
 				'puntos'	=> $fila['punto']
 			]);
 		}
-		return redirect('examen-resuelto?id='.$examenalumno->id);
+		//return redirect('examen-resuelto?id='.$examenalumno->id);
+
+		return redirect()->route('examen-resuelto',  ['id' => $examenalumno->id])->with('success', '¡Formulario enviado correctamente!');
+
 	}
 	function register_alumno(){
 		$especialidades = Especialidad::get();

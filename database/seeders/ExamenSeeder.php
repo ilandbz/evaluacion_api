@@ -30,7 +30,8 @@ class ExamenSeeder extends Seeder
             'fecha' => date('Y-m-d'),
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
-            'duracion' => 10 
+            'duracion' => 10,
+            'estado'    => 0
         ]);
         Examen::firstOrCreate(
         [
@@ -48,7 +49,8 @@ class ExamenSeeder extends Seeder
             'fecha' => date('Y-m-d'),
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
-            'duracion' => 10 
+            'duracion' => 10,
+            'estado'    => 0
         ]);
     }
 }

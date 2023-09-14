@@ -34,6 +34,6 @@ Route::get('/', function () {
 Route::get('/inicio', [EvaluacionController::class, 'index']);
 Route::get('/examen', [EvaluacionController::class, 'examen'])->name('examen');
 Route::POST('/resolver', [EvaluacionController::class, 'resolver']);
-Route::get('/examen-resuelto', [EvaluacionController::class, 'examen_resuelto']);
+Route::get('/examen-resuelto', [EvaluacionController::class, 'examen_resuelto'])->name('examen-resuelto');
 Route::get('/register', [EvaluacionController::class, 'register_alumno'])->name('register');
 Route::post('/register', [EvaluacionController::class, 'store']);
