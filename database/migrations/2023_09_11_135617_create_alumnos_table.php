@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('especialidad_id')->constrained('especialidads')->onDelete('cascade')->onUpdate('cascade');
             $table->string('dni',15)->unique();
             $table->string('apenom');
             $table->timestamps();

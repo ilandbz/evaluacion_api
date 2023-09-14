@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Especialidad;
 use App\Models\Examen;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,11 +16,39 @@ class ExamenSeeder extends Seeder
     {
         Examen::firstOrCreate(
         [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS IV')->value('id'),
             'titulo' => 'PRACTICA CALIFICADA 2 SISTEMAS OPERATIVOS',
             'fecha' => date('Y-m-d'),
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
-            'duracion' => 20 
+            'duracion' => 10 
+        ]);
+        Examen::firstOrCreate(
+        [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
+            'titulo' => 'PRACTICA CALIFICADA 2 HERRAMIENTAS DE GESTION DE REDES',
+            'fecha' => date('Y-m-d'),
+            'hora_inicio'   => '00:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10 
+        ]);
+        Examen::firstOrCreate(
+        [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
+            'titulo' => 'PRACTICA CALIFICADA 2 SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS',
+            'fecha' => date('Y-m-d'),
+            'hora_inicio'   => '00:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10 
+        ]);
+        Examen::firstOrCreate(
+        [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS VI')->value('id'),
+            'titulo' => 'PRACTICA CALIFICADA 2 PRODUCCION AUDIOVISUAL',
+            'fecha' => date('Y-m-d'),
+            'hora_inicio'   => '00:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10 
         ]);
     }
 }

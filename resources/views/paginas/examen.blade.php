@@ -96,9 +96,7 @@
     var segs = 59;
     var s;
     function minutos(){
-      //document.getElementById("tiempo_rendicion").value=mins+':'+segs;  
       if(mins == 0){
-        //location.reload();
         alert("EL EXAMEN TERMINO");
         document.getElementById("resolver_examen").submit();
       }
@@ -115,7 +113,24 @@
       segs--;
     }
     var m = setInterval('segundos()', 1000);
-    //]]>
+    document.body.addEventListener('mouseout', function(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+
+        var bodyWidth = document.body.clientWidth;
+        var bodyHeight = document.body.clientHeight;
+
+        if (x < 0 || x >= bodyWidth || y < 0 || y >= bodyHeight) {
+            alert('¡NO PUEDES SALIR DE LA PAGINA!');
+        }
+    });
+    document.onkeydown = function(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+    alert("No puedes actualizar pagina :)")
+    if (tecla = 116) {return false;}
+    }
+
+
 </script>
 
 @endsection

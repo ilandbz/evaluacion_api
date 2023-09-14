@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('examens', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('especialidad_id')->constrained('especialidads')->onDelete('cascade')->onUpdate('cascade');
             $table->string('titulo');
             $table->date('fecha');
-            $table->time('hora_inicio');//intervalo entre que horas pueden rendir el examen
+            $table->time('hora_inicio');
             $table->time('hora_fin');
-            $table->integer('duracion');//minutos
+            $table->integer('duracion');
             $table->timestamps();
         });
     }

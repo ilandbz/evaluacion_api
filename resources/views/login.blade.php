@@ -50,24 +50,24 @@
                     @csrf
                     <div class="mb-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="apenom" placeholder="APELLIDOS Y NOMBRES">
+                            <input type="text" class="form-control" name="name" placeholder="APELLIDOS Y NOMBRES">
                             <div class="input-group-text">
-                                <span class="fa-solid fa-user"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
-                        @if ($errors->has('apenom'))
-                            <small class="text-danger">{{$errors->first('apenom')}}</small>
+                        @if ($errors->has('name'))
+                            <small class="text-danger">{{$errors->first('name')}}</small>
                         @endif
                     </div>
                     <div class="mb-3">
                         <div class="input-group">
-                            <input type="dni" name="dni" class="form-control" placeholder="DNI">
+                            <input type="password" name="password" class="form-control">
                             <div class="input-group-text">
                                 <span class="bi bi-lock-fill"></span>
                             </div>
                         </div>
-                        @if ($errors->has('dni'))
-                        <small class="text-danger">{{$errors->first('dni')}}</small>
+                        @if ($errors->has('password'))
+                        <small class="text-danger">{{$errors->first('password')}}</small>
                         @endif
                     </div>
                     <!--begin::Row-->
@@ -78,6 +78,9 @@
                                 <button type="submit" class="btn btn-primary">INGRESAR</button>
                             </div>
                         </div>
+                        <p class="mt-4">
+                            <a href="/register" class="text-center">Registrar</a>
+                        </p>
                         <!-- /.col -->
                     </div>
                     <!--end::Row-->

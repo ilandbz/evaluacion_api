@@ -17,19 +17,33 @@ class LoginController extends Controller
                 'email'    => 'El :attribute no es una dirección de correo válida.'
             ];
             $request->validate([
-                'dni'     => 'required',
-                'apenom'  => 'required'
+                'name'     => 'required',
+                'password'  => 'required'
             ], $mensajes);
+    
+            $credentials = $request->only('name', 'password');
+    
+            if(Auth::attempt($credentials)){
+                return redirect()->intended('/inicio');
+            }
+            
+            return redirect('login')->with('error', 'Datos inválidos');
 
-            Alumno::create([
-                'dni'   => $request->dni,
-                'apenom'=> $request->apenom
-            ]);
+            // $mensajes = [
+            //     'required' => 'El campo :attribute es obligatorio.',
+            //     'email'    => 'El :attribute no es una dirección de correo válida.'
+            // ];
+            // $request->validate([
+            //     'dni'     => 'required',
+            //     'apenom'  => 'required'
+            // ], $mensajes);
 
-            Session::put('dni', $request->dni);
-            Session::put('apenom', $request->apenom);
 
-            return redirect()->intended('/examen');
+
+            // Session::put('dni', $request->dni);
+            // Session::put('apenom', $request->apenom);
+
+            // return redirect()->intended('/examen');
         }
 
 

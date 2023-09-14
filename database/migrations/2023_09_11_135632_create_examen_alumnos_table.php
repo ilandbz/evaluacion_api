@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('totalincorrectas');
             $table->decimal('nota');
             $table->string('estado');
+            //$table->string('estado')->default('Rindiendo');
+            $table->unique(['alumno_id', 'examen_id']);
             $table->timestamps();
         });
     }

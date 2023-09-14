@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\AlternativaMarcada;
 use App\Models\Alumno;
+use App\Models\Especialidad;
 use App\Models\Examen;
 use App\Models\ExamenAlumno;
 use App\Models\Pregunta;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class EvaluacionController extends Controller
@@ -17,11 +19,11 @@ class EvaluacionController extends Controller
      * Display a listing of the resource.
      */
 	public function index(){
-        $alumno=Alumno::where('dni', Session::get('dni'))->first();
+        $alumno=Alumno::where('id', Auth::user()->id)->first();
 		$fechaHoraActual = Carbon::now();
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
-        $examen=Examen::where('id', 1)->first();
+        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->orderBy('fecha', 'desc')->first();
 		$data['examen']=$examen;
 		$examenalumno = Examenalumno::where('alumno_id', $alumno->id)->where('examen_id', $examen->id)->first();
 		if($examenalumno){
@@ -32,17 +34,17 @@ class EvaluacionController extends Controller
 		}else{
 			$data['mensaje']='NO SE ENCUENTRA EN LA FECHA Y HORA ESTABLECIDA, NO CORRESPONDE';
 		}
-        return view('app', $data);		
+        return view('app', $data);	
 	}
 
     public function examen()
     {
-        // $alumno=Alumno::where('dni', Session::get('dni'))->first();
-        // $data['alumno'] = $alumno;
-        // $examen=Examen::where('id', 1)->first();
-        // $data['examen']=$examen;
-        // $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
-        // return view('paginas/examen', $data);
+        $alumno=Alumno::where('id', Auth::user()->id)->first();
+        $data['alumno'] = $alumno;
+        $examen=Examen::where('id', 1)->first();
+        $data['examen']=$examen;
+        $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
+        return view('paginas/examen', $data);
     }
 
     /**
@@ -56,7 +58,27 @@ class EvaluacionController extends Controller
     {
         //
     }
+    public function store(Request $request)
+    {
+		$mensajes = [
+			'required' => 'El campo :attribute es obligatorio.',
+			'email'    => 'El :attribute no es una dirección de correo válida.'
+		];
+		$request->validate([
+			'dni'     			=> 'required|unique:alumnos,dni',
+			'apenom'  			=> 'required',
+			'especialidad_id'   => 'required',
+		], $mensajes);
 
+		Alumno::firstorCreate([
+			'dni'   			=> $request->dni,
+			'apenom'			=> $request->apenom,
+			'especialidad_id'	=> $request->especialidad_id
+		]);
+		Session::flash('success', '¡Registro exitoso!');
+
+		return redirect()->route('register');
+    }
     /**
      * Update the specified resource in storage.
      */
@@ -99,7 +121,7 @@ class EvaluacionController extends Controller
 			'fecha_hora'	=> date('Y-m-d'),
 			'totalincorrectas' => $incorrectas,
 			'nota' => $puntajetotal,
-			'estado' => $puntajetotal>=11 ? 'APROBADO' : 'DESAPROBADO',
+			'estado' => $puntajetotal>=13 ? 'APROBADO' : 'DESAPROBADO',
 		]);
 		foreach($miarreglo as $fila){
 			AlternativaMarcada::firstOrCreate([
@@ -111,6 +133,10 @@ class EvaluacionController extends Controller
 			]);
 		}
 		return redirect('examen-resuelto?id='.$examenalumno->id);
+	}
+	function register_alumno(){
+		$especialidades = Especialidad::get();
+		return view('paginas.register', compact('especialidades'));
 	}
 	function examen_resuelto(Request $request){
 		$data['examenalumno']=ExamenAlumno::with('alternativasMarcadas', 'alumno:id,apenom,dni')
