@@ -8,9 +8,11 @@ use App\Models\Especialidad;
 use App\Models\Examen;
 use App\Models\ExamenAlumno;
 use App\Models\Pregunta;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class EvaluacionController extends Controller
@@ -70,10 +72,15 @@ class EvaluacionController extends Controller
 			'especialidad_id'   => 'required',
 		], $mensajes);
 
-		Alumno::firstorCreate([
+		$alumno = Alumno::firstorCreate([
 			'dni'   			=> $request->dni,
 			'apenom'			=> $request->apenom,
 			'especialidad_id'	=> $request->especialidad_id
+		]);
+		User::firstorCreate([
+			'name'   			=> $request->dni,
+			'password'			=> Hash::make($request->dni),
+			'alumno_id'	=> $alumno->id
 		]);
 		Session::flash('success', '¡Registro exitoso!');
 
