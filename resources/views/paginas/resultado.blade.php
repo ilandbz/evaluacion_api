@@ -63,7 +63,7 @@
 						<div class="row">
 							<div class="col-md-offset-5 col-md-2">
 								<div class="img-circle">
-									@if ($examenalumno['nota']<11)
+									@if ($examenalumno['nota']<13)
 										<img src="imagenes/triste.png" class="img-responsive img-thumbnail" alt="DESAPROBADO" title="DESAPROBADO" class="">
 									@else
 										<img src="imagenes/feliz.jpg" alt="APROBADO" title="APROBADO">
