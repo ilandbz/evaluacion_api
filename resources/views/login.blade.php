@@ -50,7 +50,7 @@
                     @csrf
                     <div class="mb-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="name" placeholder="APELLIDOS Y NOMBRES">
+                            <input type="text" class="form-control" name="name" placeholder="DNI">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
                             </div>

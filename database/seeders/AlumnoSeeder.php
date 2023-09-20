@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Alumno;
 use App\Models\Especialidad;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AlumnoSeeder extends Seeder
 {
@@ -56,7 +58,6 @@ class AlumnoSeeder extends Seeder
             ['dni' => '71578767', 'apenom' => 'Marticorena Acuña Milene Najhely', 'especialidad_id' => $especialidad_id],
             ['dni' => '62531050', 'apenom' => 'García Morales Isaú Yeferson', 'especialidad_id' => $especialidad_id],     
             ['dni' => '76277033', 'apenom' => 'López Ramírez adely doris', 'especialidad_id' => $especialidad_id],     
-            ['dni' => '71578767', 'apenom' => 'Marticorena Acuña Milene Najhely', 'especialidad_id' => $especialidad_id],
             ['dni' => '47710741', 'apenom' => 'Susanivar Agustin Neruda', 'especialidad_id' => $especialidad_id], 
             ['dni' => '76344206', 'apenom' => 'Solis yanac alex jeancarlos', 'especialidad_id' => $especialidad_id],         
             ['dni' => '72268682', 'apenom' => 'Santamaria Paucar Sheyla Rocío', 'especialidad_id' => $especialidad_id],      
@@ -97,11 +98,19 @@ class AlumnoSeeder extends Seeder
 
 
         foreach ($alumnos as $alumno) {
-            Alumno::firstOrCreate([
+            $registro = Alumno::firstOrCreate([
                 'dni' => $alumno['dni'],
                 'apenom' => $alumno['apenom'],
                 'especialidad_id' => $alumno['especialidad_id']
             ]);
+
+            User::firstOrCreate([
+                'name'      => $registro->dni,
+                'password'  => Hash::make($registro->dni),
+                'alumno_id' => $registro->id,
+            ]);
+
+
         }
     }
 }

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ExamenSeeder::class,
             PreguntaSeeder::class,
             AlumnoSeeder::class,
-            UserSeeder::class,
+            // UserSeeder::class,
         ]);
 
     }
