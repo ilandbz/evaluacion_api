@@ -78,9 +78,6 @@
                                 <button type="submit" class="btn btn-primary">INGRESAR</button>
                             </div>
                         </div>
-                        <p class="mt-4">
-                            <a href="/register" class="text-center">Registrar</a>
-                        </p>
                         <!-- /.col -->
                     </div>
                     <!--end::Row-->
