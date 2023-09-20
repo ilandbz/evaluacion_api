@@ -113,17 +113,17 @@
       segs--;
     }
     var m = setInterval('segundos()', 1000);
-    document.body.addEventListener('mouseout', function(e) {
-        var x = e.clientX;
-        var y = e.clientY;
+    // document.body.addEventListener('mouseout', function(e) {
+    //     var x = e.clientX;
+    //     var y = e.clientY;
 
-        var bodyWidth = document.body.clientWidth;
-        var bodyHeight = document.body.clientHeight;
+    //     var bodyWidth = document.body.clientWidth;
+    //     var bodyHeight = document.body.clientHeight;
 
-        if (x < 0 || x >= bodyWidth || y < 0 || y >= bodyHeight) {
-            alert('¡NO PUEDES SALIR DE LA PAGINA!');
-        }
-    });
+    //     if (x < 0 || x >= bodyWidth || y < 0 || y >= bodyHeight) {
+    //         alert('¡NO PUEDES SALIR DE LA PAGINA!');
+    //     }
+    // });
     // document.onkeydown = function(e){
     //     tecla = (document.all) ? e.keyCode : e.which;
     //     alert("No puedes actualizar pagina :)")
