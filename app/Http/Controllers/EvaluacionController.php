@@ -26,17 +26,22 @@ class EvaluacionController extends Controller
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
         $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
-		$data['examen']=$examen;
-		$examenalumno = Examenalumno::where('alumno_id', $alumno->id)->where('examen_id', $examen->id)->first();
-		if($examenalumno){
-			$data['mensaje']='YA RINDIO EL EXAMEN';
-		}else if($fechaHoraActual->format('Y-m-d H:i:s')>$examen->fecha.' '.$examen->hora_inicio && 
-			$fechaHoraActual->format('Y-m-d H:i:s')<$examen->fecha.' '.$examen->hora_fin){
-			$data['mensaje']='SUCCESS';
-		}else{
-			$data['mensaje']='NO SE ENCUENTRA EN LA FECHA Y HORA ESTABLECIDA, NO CORRESPONDE';
+		if($examen){
+			$data['examen']=$examen;
+			$examenalumno = Examenalumno::where('alumno_id', $alumno->id)->where('examen_id', $examen->id)->first();
+			if($examenalumno){
+				$data['mensaje']='YA RINDIO EL EXAMEN';
+			}else if($fechaHoraActual->format('Y-m-d H:i:s')>$examen->fecha.' '.$examen->hora_inicio && 
+				$fechaHoraActual->format('Y-m-d H:i:s')<$examen->fecha.' '.$examen->hora_fin){
+				$data['mensaje']='SUCCESS';
+			}else{
+				$data['mensaje']='NO SE ENCUENTRA EN LA FECHA Y HORA ESTABLECIDA, NO CORRESPONDE';
+			}
+			return view('app', $data);	
 		}
-        return view('app', $data);	
+		return 'NO EXISTE NINGUN EXAMEN ACTIVO';
+
+
 	}
 
     public function examen()
@@ -104,7 +109,8 @@ class EvaluacionController extends Controller
     function resolver(Request $request){
         $alumno=Alumno::where('id', Auth::user()->id)->first();
 
-		$examenalumno =ExamenAlumno::where('alumno_id', $alumno->id)->where('examen_id', $request->idexamen)->first();
+		$examenalumno =ExamenAlumno::where('alumno_id', $alumno->id)
+		->where('examen_id', $request->idexamen)->first();
 		if($examenalumno){
 			echo 'YA HABIAS RENDIDO EL EXAMEN, JOVEN  😢';
 		}else{
