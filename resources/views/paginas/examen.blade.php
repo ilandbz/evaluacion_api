@@ -124,11 +124,11 @@
             alert('¡NO PUEDES SALIR DE LA PAGINA!');
         }
     });
-    document.onkeydown = function(e){
-        tecla = (document.all) ? e.keyCode : e.which;
-        alert("No puedes actualizar pagina :)")
-        if (tecla = 116) {return false;}
-    }
+    // document.onkeydown = function(e){
+    //     tecla = (document.all) ? e.keyCode : e.which;
+    //     alert("No puedes actualizar pagina :)")
+    //     if (tecla = 116) {return false;}
+    // }
 
 
 </script>
