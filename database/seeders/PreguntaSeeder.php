@@ -695,10 +695,10 @@ class PreguntaSeeder extends Seeder
             //-------------------------------------//
             [
                 'text' => '¿Qué significa ASN.1 en el contexto de la Capa de Enlace de Datos?',
-                'examen_id' => $id,
+                'examen_id' => $id3,
                 'answer' => 'b',
                 'correct_answer' => 'Abstract Syntax Notation One (Notación Sintáctica Abstracta Uno)',
-                'category' => 'Capa de Enlace de Datos',
+                'category' => 'MODELO OSI',
                 'alternativas' => [
                     ['cod' => 'a', 'text' => 'Análisis de Sistemas de Red'],
                     ['cod' => 'b', 'text' => 'Abstract Syntax Notation One (Notación Sintáctica Abstracta Uno)'],
@@ -708,10 +708,10 @@ class PreguntaSeeder extends Seeder
             ],
             [
                 'text' => '¿Cuál de los siguientes NO es un tipo de datos en ASN.1?',
-                'examen_id' => $id,
+                'examen_id' => $id3,
                 'answer' => 'c',
                 'correct_answer' => 'FLOAT',
-                'category' => 'Capa de Enlace de Datos',
+                'category' => 'MODELO OSI',
                 'alternativas' => [
                     ['cod' => 'a', 'text' => 'INTEGER'],
                     ['cod' => 'b', 'text' => 'BOOLEAN'],
@@ -721,10 +721,10 @@ class PreguntaSeeder extends Seeder
             ],
             [
                 'text' => '¿Qué función tiene la codificación BER en la Capa de Enlace de Datos?',
-                'examen_id' => $id,
+                'examen_id' => $id3,
                 'answer' => 'c',
                 'correct_answer' => 'Codificar y decodificar datos ASN.1 para su transmisión',
-                'category' => 'Capa de Enlace de Datos',
+                'category' => 'MODELO OSI',
                 'alternativas' => [
                     ['cod' => 'a', 'text' => 'Generar códigos de barras'],
                     ['cod' => 'b', 'text' => 'Enviar mensajes de correo electrónico'],
@@ -734,10 +734,10 @@ class PreguntaSeeder extends Seeder
             ],
             [
                 'text' => '¿Cuál es uno de los beneficios de la codificación BER en la comunicación de redes?',
-                'examen_id' => $id,
+                'examen_id' => $id3,
                 'answer' => 'b',
                 'correct_answer' => 'Garantiza la interpretación precisa de los datos independientemente de la plataforma',
-                'category' => 'Comunicación de Redes',
+                'category' => 'Modelo OSI',
                 'alternativas' => [
                     ['cod' => 'a', 'text' => 'Incrementa la complejidad de los datos'],
                     ['cod' => 'b', 'text' => 'Garantiza la interpretación precisa de los datos independientemente de la plataforma'],
@@ -747,27 +747,148 @@ class PreguntaSeeder extends Seeder
             ],
             [
                 'text' => '¿Qué se entiende por "identificador de tipo" en la codificación BER?',
-                'examen_id' => $id,
+                'examen_id' => $id3,
                 'answer' => 'c',
                 'correct_answer' => 'Un número único que identifica el tipo de datos ASN.1',
-                'category' => 'Codificación BER',
+                'category' => 'MODELO OSI',
                 'alternativas' => [
                     ['cod' => 'a', 'text' => 'El nombre del protocolo utilizado'],
                     ['cod' => 'b', 'text' => 'El número de puerto en el que se envían los datos'],
                     ['cod' => 'c', 'text' => 'Un número único que identifica el tipo de datos ASN.1'],
                     ['cod' => 'd', 'text' => 'El código de país del dispositivo de origen'],
                 ]
-            ]
-
-
-
-
-            
-
-
- 
+            ],
+            [
+                'text' => '¿Qué tipo de datos en ASN.1 representa valores verdadero o falso?',
+                'examen_id' => $id3,
+                'answer' => 'b',
+                'correct_answer' => 'BOOLEAN',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'INTEGER'],
+                    ['cod' => 'b', 'text' => 'BOOLEAN'],
+                    ['cod' => 'c', 'text' => 'OCTET STRING'],
+                    ['cod' => 'd', 'text' => 'IA5String'],
+                ]
+            ],
+            [
+                'text' => '¿Qué función tiene la Capa de Enlace de Datos en el Modelo OSI?',
+                'examen_id' => $id3,
+                'answer' => 'a',
+                'correct_answer' => 'Transmitir datos de manera confiable entre dispositivos directamente conectados.',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Transmitir datos de manera confiable entre dispositivos directamente conectados.'],
+                    ['cod' => 'b', 'text' => 'Encriptar todos los datos en la red'],
+                    ['cod' => 'c', 'text' => 'Determinar la ruta óptima para la transmisión de datos'],
+                    ['cod' => 'd', 'text' => 'Traducir direcciones IP en direcciones MAC.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué tipo de datos en ASN.1 representa cadenas de caracteres ASCII?',
+                'examen_id' => $id3,
+                'answer' => 'd',
+                'correct_answer' => 'IA5String',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'INTEGER'],
+                    ['cod' => 'b', 'text' => 'BOOLEAN'],
+                    ['cod' => 'c', 'text' => 'OCTET STRING'],
+                    ['cod' => 'd', 'text' => 'IA5String'],
+                ]
+            ],
+            [
+                'text' => 'Cual de los siguientes no es una capa del modelo OSI',
+                'examen_id' => $id3,
+                'answer' => 'd',
+                'correct_answer' => 'AUTENTICACION',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'APLICACION'],
+                    ['cod' => 'b', 'text' => 'PRESENTACION'],
+                    ['cod' => 'c', 'text' => 'FISICO'],
+                    ['cod' => 'd', 'text' => 'AUTENTICACION'],
+                ]
+            ],
+            [
+                'text' => 'Esta capa se ocupa de la transmisión de señales físicas a través de medios de comunicación como cables y ondas de radio.',
+                'examen_id' => $id3,
+                'answer' => 'c',
+                'correct_answer' => 'FISICO',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'APLICACION'],
+                    ['cod' => 'b', 'text' => 'PRESENTACION'],
+                    ['cod' => 'c', 'text' => 'FISICO'],
+                    ['cod' => 'd', 'text' => 'AUTENTICACION'],
+                ]
+            ],
+            [
+                'text' => 'Se centra en el enrutamiento de datos entre redes y determina la ruta que deben seguir los paquetes de datos para llegar a su destino',
+                'examen_id' => $id3,
+                'answer' => 'd',
+                'correct_answer' => 'RED',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'APLICACION'],
+                    ['cod' => 'b', 'text' => 'PRESENTACION'],
+                    ['cod' => 'c', 'text' => 'FISICO'],
+                    ['cod' => 'd', 'text' => 'RED'],
+                ]
+            ],
+            [
+                'text' => 'Esta capa es responsable de la transferencia de datos extremo a extremo y asegura que los datos se entreguen de manera confiable y en el orden correcto. También maneja el control de flujo y la detección de errores.',
+                'examen_id' => $id3,
+                'answer' => 'b',
+                'correct_answer' => 'TRANSPORTE',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'APLICACION'],
+                    ['cod' => 'b', 'text' => 'TRANSPORTE'],
+                    ['cod' => 'c', 'text' => 'FISICO'],
+                    ['cod' => 'd', 'text' => 'RED'],
+                ]
+            ],
+            [
+                'text' => 'Establece, administra y finaliza las conexiones entre aplicaciones en dispositivos remotos. Controla el diálogo y la sincronización entre los procesos de las aplicaciones.',
+                'examen_id' => $id3,
+                'answer' => 'd',
+                'correct_answer' => 'CAPA DE SESSION',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'CAPA DE APLICACION'],
+                    ['cod' => 'b', 'text' => 'CAPA DE TRANSPORTE'],
+                    ['cod' => 'c', 'text' => 'CAPA FISICO'],
+                    ['cod' => 'd', 'text' => 'CAPA DE SESSION'],
+                ]
+            ],
+            [
+                'text' => 'se encarga de la traducción, compresión y encriptación de los datos para garantizar que puedan ser entendidos por las aplicaciones en ambos extremos de la comunicación.',
+                'examen_id' => $id3,
+                'answer' => 'b',
+                'correct_answer' => 'CAPA DE PRESENTACION',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'CAPA DE APLICACION'],
+                    ['cod' => 'b', 'text' => 'CAPA DE PRESENTACION'],
+                    ['cod' => 'c', 'text' => 'CAPA FISICO'],
+                    ['cod' => 'd', 'text' => 'CAPA DE SESSION'],
+                ]
+            ],
+            [
+                'text' => 'Es la capa más cercana al usuario final y proporciona servicios de red directamente utilizados por las aplicaciones.',
+                'examen_id' => $id3,
+                'answer' => 'a',
+                'correct_answer' => 'CAPA DE APLICACION',
+                'category' => 'MODELO OSI',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'CAPA DE APLICACION'],
+                    ['cod' => 'b', 'text' => 'CAPA DE PRESENTACION'],
+                    ['cod' => 'c', 'text' => 'CAPA FISICO'],
+                    ['cod' => 'd', 'text' => 'CAPA DE SESSION'],
+                ]
+            ],           
         ];
-
         foreach ($preguntas as $menuData) {
             $pregunta = Pregunta::firstOrCreate([
                 'text' => $menuData['text'], 
