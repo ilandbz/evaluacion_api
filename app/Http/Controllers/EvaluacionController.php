@@ -40,8 +40,6 @@ class EvaluacionController extends Controller
 			return view('app', $data);	
 		}
 		return 'NO EXISTE NINGUN EXAMEN ACTIVO';
-
-
 	}
 
     public function examen()

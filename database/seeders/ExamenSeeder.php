@@ -46,6 +46,16 @@ class ExamenSeeder extends Seeder
         ]);
         Examen::firstOrCreate(
         [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
+            'titulo' => 'EXAMEN DE MEDIO CURSO SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS',
+            'fecha' => '2023-01-01',
+            'hora_inicio'   => '00:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10,
+            'estado'    => 0
+        ]);
+        Examen::firstOrCreate(
+        [
             'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS VI')->value('id'),
             'titulo' => 'PRACTICA CALIFICADA 2 PRODUCCION AUDIOVISUAL',
             'fecha' => '2023-01-01',

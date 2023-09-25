@@ -18,6 +18,7 @@ class PreguntaSeeder extends Seeder
         $id= Examen::where('titulo', 'PRACTICA CALIFICADA 2 SISTEMAS OPERATIVOS')->value('id'); 
         $id2= Examen::where('titulo', 'PRACTICA CALIFICADA 2 SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS')->value('id'); 
         $id3= Examen::where('titulo', 'PRACTICA CALIFICADA 2 HERRAMIENTAS DE GESTION DE REDES')->value('id');
+        $id4= Examen::where('titulo', 'EXAMEN DE MEDIO CURSO SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS')->value('id');
         $preguntas = [ 
             [
                 'text' => 'Cuál es la función principal del núcleo (kernel) en un sistema operativo?',
@@ -887,7 +888,73 @@ class PreguntaSeeder extends Seeder
                     ['cod' => 'c', 'text' => 'CAPA FISICO'],
                     ['cod' => 'd', 'text' => 'CAPA DE SESSION'],
                 ]
-            ],           
+            ],
+            //MEDIOCURSOS 
+            [
+                'text' => 'QUE SIGNIFICA DDL',
+                'examen_id' => $id4,
+                'answer' => 'a',
+                'correct_answer' => 'Data Definition Language',
+                'category' => 'base de datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Data Definition Language'],
+                    ['cod' => 'b', 'text' => 'Data Define Language'],
+                    ['cod' => 'c', 'text' => 'Lenguaje de Manipulacion de Datos'],
+                    ['cod' => 'd', 'text' => 'Estructured Query Language'],
+                ]
+            ],
+            [
+                'text' => 'DQL',
+                'examen_id' => $id4,
+                'answer' => 'a',
+                'correct_answer' => 'Lenguaje de Consulta de Datos',
+                'category' => 'base de datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Lenguaje de Consulta de Datos'],
+                    ['cod' => 'b', 'text' => 'Lenguaje de Manipulacion de Datos'],
+                    ['cod' => 'c', 'text' => 'Lenguaje de Definicion de Datos'],
+                    ['cod' => 'd', 'text' => 'Lenguaje de Control de Datos'],
+                ]
+            ],
+            [
+                'text' => 'DML',
+                'examen_id' => $id4,
+                'answer' => 'b',
+                'correct_answer' => 'Lenguaje de Manipulacion de Datos',
+                'category' => 'base de datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Lenguaje de Definicion de Datos'],
+                    ['cod' => 'b', 'text' => 'Lenguaje de Manipulacion de Datos'],
+                    ['cod' => 'c', 'text' => 'Lenguaje de Definicion de Datos'],
+                    ['cod' => 'd', 'text' => 'Lenguaje de Consulta de Datos'],
+                ]
+            ],
+            [
+                'text' => 'DCL',
+                'examen_id' => $id4,
+                'answer' => 'd',
+                'correct_answer' => 'Lenguaje de Control de Datos',
+                'category' => 'base de datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Lenguaje de Consulta de Datos'],
+                    ['cod' => 'b', 'text' => 'Lenguaje de Manipulacion de Datos'],
+                    ['cod' => 'c', 'text' => 'Lenguaje de Definicion de Datos'],
+                    ['cod' => 'd', 'text' => 'Lenguaje de Control de Datos'],
+                ]
+            ],
+            [
+                'text' => 'LENGUAJE ESTRUCTURADO DE CONSULTAS',
+                'examen_id' => $id4,
+                'answer' => 'd',
+                'correct_answer' => 'SQL',
+                'category' => 'base de datos',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'DDL'],
+                    ['cod' => 'b', 'text' => 'DML'],
+                    ['cod' => 'c', 'text' => 'DCL'],
+                    ['cod' => 'd', 'text' => 'SQL'],
+                ]
+            ],            
         ];
         foreach ($preguntas as $menuData) {
             $pregunta = Pregunta::firstOrCreate([
