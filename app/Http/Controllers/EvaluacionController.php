@@ -22,7 +22,6 @@ class EvaluacionController extends Controller
      */
 	public function index(){
 
-		return Auth::user();
         $alumno=Alumno::where('id', Auth::user()->alumno_id)->first();
 
 
