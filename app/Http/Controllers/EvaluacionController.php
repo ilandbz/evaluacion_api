@@ -21,11 +21,14 @@ class EvaluacionController extends Controller
      * Display a listing of the resource.
      */
 	public function index(){
+
+		return Auth::user();
         $alumno=Alumno::where('id', Auth::user()->id)->first();
+
+
 		$fechaHoraActual = Carbon::now();
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
-echo 'asdadsasadsdas';
 
 		return $alumno;
         $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
