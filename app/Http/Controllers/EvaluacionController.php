@@ -23,7 +23,7 @@ class EvaluacionController extends Controller
 	public function index(){
 
 		return Auth::user();
-        $alumno=Alumno::where('id', Auth::user()->id)->first();
+        $alumno=Alumno::where('id', Auth::user()->alumno_id)->first();
 
 
 		$fechaHoraActual = Carbon::now();
@@ -91,7 +91,7 @@ class EvaluacionController extends Controller
 		User::firstorCreate([
 			'name'   			=> $request->dni,
 			'password'			=> Hash::make($request->dni),
-			'alumno_id'	=> $alumno->id
+			'alumno_id'			=> $alumno->id
 		]);
 		Session::flash('success', '¡Registro exitoso!');
 
