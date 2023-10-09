@@ -26,6 +26,16 @@ class ExamenSeeder extends Seeder
         ]);
         Examen::firstOrCreate(
         [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS IV')->value('id'),
+            'titulo' => 'EXAMEN DE MEDIO CURSO SISTEMAS OPERATIVOS',
+            'fecha' => '2023-10-09',
+            'hora_inicio'   => '12:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10,
+            'estado'    => 1
+        ]);
+        Examen::firstOrCreate(
+        [
             'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
             'titulo' => 'PRACTICA CALIFICADA 2 HERRAMIENTAS DE GESTION DE REDES',
             'fecha' => '2023-09-20',
