@@ -26,6 +26,8 @@ class EvaluacionController extends Controller
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
         $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
+		return $examen;
+		
 		if($examen){
 			$data['examen']=$examen;
 			$examenalumno = Examenalumno::where('alumno_id', $alumno->id)->where('examen_id', $examen->id)->first();
