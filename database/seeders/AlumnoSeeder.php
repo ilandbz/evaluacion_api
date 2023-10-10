@@ -94,6 +94,37 @@ class AlumnoSeeder extends Seeder
             ['dni' => '73611242', 'apenom' => 'Sebastian Camones Yhoshelyn katheryn', 'especialidad_id' => $especialidad_id],
             ['dni' => '73660039', 'apenom' => 'Valentín Flores zulema', 'especialidad_id' => $especialidad_id],
             ['dni' => '73972749', 'apenom' => 'Santa Cruz Davila Andy Bernabe', 'especialidad_id' => $especialidad_id],
+
+
+
+   ['dni'   => '76820746', 'apenom' => 'Enrique Castro Lenin', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '73604260', 'apenom' => 'Casahuaman Ortega Piero rafael', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '75089589', 'apenom' => 'Custodio Igarza, Gabriel Jesus', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '73583342', 'apenom' => 'Claudio Soto Joseph Victor', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '77701104', 'apenom' => 'LLanos Silvio Juan ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74937201', 'apenom' => 'Guillermo peña crisler', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74557158', 'apenom' => 'Salas Pérez Ronald ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74603563', 'apenom' => 'Esteban Vilca Edelmira', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74636372', 'apenom' => 'Tarazona Robles Jhonsmar ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74221273', 'apenom' => 'ANDRES MAYLLE ZENIA BETSY', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '73958302', 'apenom' => 'Flores Lorenzo Paul Anthony    ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '72170227', 'apenom' => 'MIRAVAL CALDAS, PABLO CÉSAR    ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74167414', 'apenom' => 'tolentino carbajal nando       ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '76794976', 'apenom' => 'Huaccho Huaman Jhord Cristian  ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74068804', 'apenom' => 'Espinoza Inga Jefferson Idiquel', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '76266626', 'apenom' => 'Salasar Vara Anyela', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '77163264', 'apenom' => 'Jara Claveriano Carina', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '75224413', 'apenom' => 'Simon Estela clider jhoel      ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '78292203', 'apenom' => 'Romero Herrera Brandon', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '77696828', 'apenom' => 'Salas Guzmán Eliana karol      ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74081425', 'apenom' => 'Espinoza Martinez Dionicio     ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '74852311', 'apenom' => 'Trigozo blacido yon Frank      ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '75895365', 'apenom' => 'Exalto Martel Ander', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '73757550', 'apenom' => 'Cámara cabello junior Jeferson ', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '22513380', 'apenom' => 'Salvador Falcon Edgar', 'especialidad_id' => $especialidad_id3],
+            
+
+
         ];
 
 
