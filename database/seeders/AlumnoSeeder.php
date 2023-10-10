@@ -123,11 +123,7 @@ class AlumnoSeeder extends Seeder
    ['dni'   => '73757550', 'apenom' => 'Cámara cabello junior Jeferson ', 'especialidad_id' => $especialidad_id3],
    ['dni'   => '22513380', 'apenom' => 'Salvador Falcon Edgar', 'especialidad_id' => $especialidad_id3],
             
-
-
         ];
-
-
         foreach ($alumnos as $alumno) {
             $registro = Alumno::firstOrCreate([
                 'dni' => $alumno['dni'],

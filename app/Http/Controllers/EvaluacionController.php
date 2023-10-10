@@ -24,7 +24,6 @@ class EvaluacionController extends Controller
 
         $alumno=Alumno::where('id', Auth::user()->alumno_id)->first();
 
-
 		$fechaHoraActual = Carbon::now();
 		$data['fechaHoraActual'] = $fechaHoraActual;
         $data['alumno'] = $alumno;
@@ -50,9 +49,12 @@ class EvaluacionController extends Controller
 
     public function examen()
     {
-        $alumno=Alumno::where('id', Auth::user()->id)->first();
+        $alumno=Alumno::where('id', Auth::user()->alumno_id)->first();
+		// $alumno=Alumno::where('id', Auth::user()->id)->first();
         $data['alumno'] = $alumno;
-        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])->where('estado', 1)->orderBy('fecha', 'desc')->first();
+        $examen=Examen::where('especialidad_id', $alumno['especialidad_id'])
+		->where('estado', 1)
+		->orderBy('fecha', 'desc')->first();
         $data['examen']=$examen;
         $data['preguntas']=Pregunta::where('examen_id', $examen->id)->inRandomOrder()->limit(10)->get();
         return view('paginas/examen', $data);
@@ -111,8 +113,7 @@ class EvaluacionController extends Controller
         //
     }
     function resolver(Request $request){
-        $alumno=Alumno::where('id', Auth::user()->id)->first();
-
+        $alumno=Alumno::where('id', Auth::user()->alumno_id)->first();
 		$examenalumno =ExamenAlumno::where('alumno_id', $alumno->id)
 		->where('examen_id', $request->idexamen)->first();
 		if($examenalumno){
