@@ -2085,6 +2085,23 @@ class PreguntaSeeder extends Seeder
         
             Alternativa::insert($alternativas);
         }
+         foreach ($preguntas2 as $menuData) {
+            $pregunta = Pregunta::firstOrCreate([
+                'text' => $menuData['text'], 
+                'correct_answer' => $menuData['correct_answer'], 
+                'examen_id' => $menuData['examen_id'], 
+                'answer' => $menuData['answer'],
+            ]);
+            $alternativas = collect($menuData['alternativas'])->map(function ($alternativa) use ($pregunta) {
+                return [
+                    'pregunta_id'   => $pregunta->id,
+                    'text'          => $alternativa['text'],
+                    'cod'           => $alternativa['cod'],
+                ];
+            })->toArray();
+        
+            Alternativa::insert($alternativas);
+        }       
     }
 
 
