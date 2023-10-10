@@ -20,6 +20,7 @@ class PreguntaSeeder extends Seeder
         // $id3= Examen::where('titulo', 'PRACTICA CALIFICADA 2 HERRAMIENTAS DE GESTION DE REDES')->value('id');
         // $id4= Examen::where('titulo', 'EXAMEN DE MEDIO CURSO SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS')->value('id');
         $id= Examen::where('titulo', 'EXAMEN DE MEDIO CURSO SISTEMAS OPERATIVOS')->value('id');
+        $id2= Examen::where('titulo', 'EXAMEN DE MEDIO CURSO DE PRODUCCION AUDIOVISUAL')->value('id');
 
         $preguntas=[
             [
@@ -605,6 +606,529 @@ class PreguntaSeeder extends Seeder
             ],            
         ];
 
+        $preguntas2=[
+            [
+                'text' => '¿Qué es la producción audiovisual?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Un proceso de creación de contenido multimedia.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Un género de películas.'],
+                    ['cod' => 'b', 'text' => 'Un proceso de creación de contenido multimedia.'],
+                    ['cod' => 'c', 'text' => 'Un estilo de narración escrita.'],
+                    ['cod' => 'd', 'text' => 'Una técnica de edición de imágenes.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes roles es responsable de la gestión financiera y logística de la producción?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Productor.',
+                'category' => 'PRODUCCIÓN CINEMATOGRÁFICA',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Guionista.'],
+                    ['cod' => 'b', 'text' => 'Director de Fotografía.'],
+                    ['cod' => 'c', 'text' => 'Productor.'],
+                    ['cod' => 'd', 'text' => 'Editor.'],
+                ]
+            ],
+            [
+                'text' => 'En qué fase de la producción se seleccionan locaciones, diseñan escenarios y se realiza el casting?',
+                'examen_id' => $id2,
+                'answer' => 'a',
+                'correct_answer' => 'Preproducción.',
+                'category' => 'PRODUCCIÓN CINEMATOGRÁFICA',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Preproducción.'],
+                    ['cod' => 'b', 'text' => 'Posproducción.'],
+                    ['cod' => 'c', 'text' => 'Producción.'],
+                    ['cod' => 'd', 'text' => 'Distribución.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué función desempeña el director de fotografía en la producción audiovisual?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Composición visual y cinematografía.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Gestión financiera.'],
+                    ['cod' => 'b', 'text' => 'Composición visual y cinematografía.'],
+                    ['cod' => 'c', 'text' => 'Montaje y edición.'],
+                    ['cod' => 'd', 'text' => 'Creación de efectos especiales.'],
+                ]
+            ],
+            [
+                'text' => 'Cuál es uno de los géneros audiovisuales que se centra en elementos futuristas y tecnológicos?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Ciencia Ficción.',
+                'category' => 'GÉNEROS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Comedia.'],
+                    ['cod' => 'b', 'text' => 'Drama.'],
+                    ['cod' => 'c', 'text' => 'Ciencia Ficción.'],
+                    ['cod' => 'd', 'text' => 'Fantasía.'],
+                ]
+            ],
+            [
+                'text' => 'Qué formato implica la proyección de películas en salas de cine?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Cine.',
+                'category' => 'FORMATOS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Televisión.'],
+                    ['cod' => 'b', 'text' => 'Publicidad.'],
+                    ['cod' => 'c', 'text' => 'Cine.'],
+                    ['cod' => 'd', 'text' => 'Streaming.'],
+                ]
+            ],
+            [
+                'text' => 'Cuál es una de las fases de la producción audiovisual que implica la edición de video y diseño de sonido?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Posproducción.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Desarrollo.'],
+                    ['cod' => 'b', 'text' => 'Preproducción.'],
+                    ['cod' => 'c', 'text' => 'Posproducción.'],
+                    ['cod' => 'd', 'text' => 'Producción.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes miembros de la producción es responsable de la creación del guion?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Guionista.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Director.'],
+                    ['cod' => 'b', 'text' => 'Productor.'],
+                    ['cod' => 'c', 'text' => 'Guionista.'],
+                    ['cod' => 'd', 'text' => 'Editor.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué género audiovisual se enfoca en explorar emociones humanas y situaciones conmovedoras?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Drama.',
+                'category' => 'GÉNEROS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Comedia.'],
+                    ['cod' => 'b', 'text' => 'Drama.'],
+                    ['cod' => 'c', 'text' => 'Acción.'],
+                    ['cod' => 'd', 'text' => 'Ciencia Ficción.'],
+                ]
+            ],
+            [
+                'text' => 'En qué etapa de la producción se promociona y lanza el contenido a través de diversos canales?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Distribución.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Desarrollo.'],
+                    ['cod' => 'b', 'text' => 'Preproducción.'],
+                    ['cod' => 'c', 'text' => 'Distribución.'],
+                    ['cod' => 'd', 'text' => 'Posproducción.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué tipo de contenido audiovisual utiliza dibujos o modelos para crear personajes y escenarios?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Animación.',
+                'category' => 'FORMATOS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Cine.'],
+                    ['cod' => 'b', 'text' => 'Televisión.'],
+                    ['cod' => 'c', 'text' => 'Animación.'],
+                    ['cod' => 'd', 'text' => 'Realidad Virtual (RV).'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes roles se encarga de capturar y crear la mezcla de audio?',
+                'examen_id' => $id2,
+                'answer' => 'a',
+                'correct_answer' => 'Sonidista.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Sonidista.'],
+                    ['cod' => 'b', 'text' => 'Maquillador y Estilista.'],
+                    ['cod' => 'c', 'text' => 'Director de Fotografía.'],
+                    ['cod' => 'd', 'text' => 'Diseñador de Producción.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es la importancia de la producción audiovisual en la sociedad?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Puede educar, informar, entretener y persuadir a las audiencias.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'No tiene ningún impacto significativo.'],
+                    ['cod' => 'b', 'text' => 'Solo entretiene a las audiencias.'],
+                    ['cod' => 'c', 'text' => 'Puede educar, informar, entretener y persuadir a las audiencias.'],
+                    ['cod' => 'd', 'text' => 'Solo afecta la economía.'],
+                ]
+            ],
+            [
+                'text' => '¿En qué género audiovisual es común encontrar elementos mágicos o sobrenaturales en entornos imaginarios?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Fantasía.',
+                'category' => 'GÉNEROS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Documental.'],
+                    ['cod' => 'b', 'text' => 'Ciencia Ficción.'],
+                    ['cod' => 'c', 'text' => 'Fantasía.'],
+                    ['cod' => 'd', 'text' => 'Thriller.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes formatos se refiere a contenido disponible en línea a través de plataformas como Netflix?',
+                'examen_id' => $id2,
+                'answer' => 'd',
+                'correct_answer' => 'Plataformas de Streaming.',
+                'category' => 'FORMATOS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Cine.'],
+                    ['cod' => 'b', 'text' => 'Televisión.'],
+                    ['cod' => 'c', 'text' => 'Publicidad.'],
+                    ['cod' => 'd', 'text' => 'Plataformas de Streaming.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de las siguientes fases de producción implica la filmación del contenido según el guion y la planificación?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Producción.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Desarrollo.'],
+                    ['cod' => 'b', 'text' => 'Preproducción.'],
+                    ['cod' => 'c', 'text' => 'Producción.'],
+                    ['cod' => 'd', 'text' => 'Posproducción.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué género audiovisual presenta hechos, eventos o temas de la vida real de manera objetiva?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Documental.',
+                'category' => 'GÉNEROS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Comedia.'],
+                    ['cod' => 'b', 'text' => 'Drama.'],
+                    ['cod' => 'c', 'text' => 'Documental.'],
+                    ['cod' => 'd', 'text' => 'Animación.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes miembros de la producción se encarga de la apariencia de los actores y la coherencia visual?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Maquillador y Estilista.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Director.'],
+                    ['cod' => 'b', 'text' => 'Diseñador de Producción.'],
+                    ['cod' => 'c', 'text' => 'Maquillador y Estilista.'],
+                    ['cod' => 'd', 'text' => 'Editor.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué género audiovisual se caracteriza por sus escenas emocionantes y llenas de adrenalina?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Acción.',
+                'category' => 'GÉNEROS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Comedia.'],
+                    ['cod' => 'b', 'text' => 'Drama.'],
+                    ['cod' => 'c', 'text' => 'Acción.'],
+                    ['cod' => 'd', 'text' => 'Fantasía.'],
+                ]
+            ],
+            [
+                'text' => '¿En qué formato se presentan anuncios de corta duración para promocionar productos o servicios?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Publicidad.',
+                'category' => 'FORMATOS AUDIOVISUALES',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Televisión.'],
+                    ['cod' => 'b', 'text' => 'Cine.'],
+                    ['cod' => 'c', 'text' => 'Publicidad.'],
+                    ['cod' => 'd', 'text' => 'Streaming.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es el significado de la palabra "cine"?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Movimiento.',
+                'category' => 'CINE',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Proyección visual.'],
+                    ['cod' => 'b', 'text' => 'Medio de comunicación.'],
+                    ['cod' => 'c', 'text' => 'Movimiento.'],
+                    ['cod' => 'd', 'text' => 'Teatro.'],
+                ]
+            ],
+            [
+                'text' => '¿Quiénes fueron los pioneros en presentar públicamente el cine en 1895?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Los hermanos Lumière.',
+                'category' => 'CINE',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Thomas Edison y Nikola Tesla.'],
+                    ['cod' => 'b', 'text' => 'Los hermanos Lumière.'],
+                    ['cod' => 'c', 'text' => 'Guglielmo Marconi y Alexander Graham Bell.'],
+                    ['cod' => 'd', 'text' => 'Eadweard Muybridge y George Eastman.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes es un aspecto técnico clave de la radio?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Frecuencias y bandas.',
+                'category' => 'RADIO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Maquillaje y vestuario.'],
+                    ['cod' => 'b', 'text' => 'Equipos de edición de video.'],
+                    ['cod' => 'c', 'text' => 'Frecuencias y bandas.'],
+                    ['cod' => 'd', 'text' => 'Micrófonos y cámaras.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál fue uno de los avances tecnológicos que permitió la transmisión transatlántica de radio?',
+                'examen_id' => $id2,
+                'answer' => 'd',
+                'correct_answer' => 'Telegrafía inalámbrica.',
+                'category' => 'RADIO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Teléfono.'],
+                    ['cod' => 'b', 'text' => 'Telégrafo.'],
+                    ['cod' => 'c', 'text' => 'Radiotelégrafo.'],
+                    ['cod' => 'd', 'text' => 'Telegrafía inalámbrica.'],
+                ]
+            ],
+            [
+                'text' => '¿En qué década se introdujo la radio FM, mejorando la calidad de sonido y cobertura?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Década de 1930.',
+                'category' => 'RADIO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Década de 1910.'],
+                    ['cod' => 'b', 'text' => 'Década de 1930.'],
+                    ['cod' => 'c', 'text' => 'Década de 1950.'],
+                    ['cod' => 'd', 'text' => 'Década de 1960.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de las siguientes bandas no se usa en la radio?',
+                'examen_id' => $id2,
+                'answer' => 'd',
+                'correct_answer' => 'SW.',
+                'category' => 'RADIO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'AM.'],
+                    ['cod' => 'b', 'text' => 'FM.'],
+                    ['cod' => 'c', 'text' => 'PM.'],
+                    ['cod' => 'd', 'text' => 'SW.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de los siguientes géneros cinematográficos se enfoca en situaciones conmovedoras y emociones humanas?',
+                'examen_id' => $id2,
+                'answer' => 'b',
+                'correct_answer' => 'Drama.',
+                'category' => 'CINE',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Comedia.'],
+                    ['cod' => 'b', 'text' => 'Drama.'],
+                    ['cod' => 'c', 'text' => 'Acción.'],
+                    ['cod' => 'd', 'text' => 'Ciencia Ficción.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué formato cinematográfico utiliza cámaras digitales en lugar de película tradicional?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Digital.',
+                'category' => 'CINE',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => '35mm.'],
+                    ['cod' => 'b', 'text' => 'IMAX.'],
+                    ['cod' => 'c', 'text' => 'Digital.'],
+                    ['cod' => 'd', 'text' => '3D.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál de las siguientes fases de la producción audiovisual implica el diseño de escenarios y selección de locaciones?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Preproducción.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Producción.'],
+                    ['cod' => 'b', 'text' => 'Posproducción.'],
+                    ['cod' => 'c', 'text' => 'Preproducción.'],
+                    ['cod' => 'd', 'text' => 'Distribución.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué género audiovisual se enfoca en la exploración de futurismo y tecnología?',
+                'examen_id' => $id2,
+                'answer' => 'c',
+                'correct_answer' => 'Ciencia Ficción.',
+                'category' => 'CINE',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Fantasía.'],
+                    ['cod' => 'b', 'text' => 'Comedia.'],
+                    ['cod' => 'c', 'text' => 'Ciencia Ficción.'],
+                    ['cod' => 'd', 'text' => 'Drama.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué función principal cumple la lente en una cámara?',
+                'examen_id' => $id,
+                'answer' => 'd',
+                'correct_answer' => 'Conectar dispositivos.',
+                'category' => 'CÁMARAS',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Almacenar imágenes.'],
+                    ['cod' => 'b', 'text' => 'Capturar luz.'],
+                    ['cod' => 'c', 'text' => 'Procesar sonido.'],
+                    ['cod' => 'd', 'text' => 'Conectar dispositivos.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es la diferencia clave entre una cámara mono y una cámara estéreo?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'El número de canales de audio.',
+                'category' => 'CÁMARAS',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'La calidad de la imagen.'],
+                    ['cod' => 'b', 'text' => 'El número de lentes.'],
+                    ['cod' => 'c', 'text' => 'El número de canales de audio.'],
+                    ['cod' => 'd', 'text' => 'La resolución del sensor.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué significa la profundidad de bits en el contexto de un sensor de cámara?',
+                'examen_id' => $id,
+                'answer' => 'd',
+                'correct_answer' => 'La cantidad de información de color que el sensor puede capturar.',
+                'category' => 'CÁMARAS',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'La cantidad de colores en una imagen.'],
+                    ['cod' => 'b', 'text' => 'El tamaño físico del sensor.'],
+                    ['cod' => 'c', 'text' => 'El número de canales de audio.'],
+                    ['cod' => 'd', 'text' => 'La cantidad de información de color que el sensor puede capturar.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué es la apertura de una lente de cámara?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'La cantidad de luz que entra en la cámara.',
+                'category' => 'CÁMARAS',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'El tiempo de exposición.'],
+                    ['cod' => 'b', 'text' => 'El número de megapíxeles.'],
+                    ['cod' => 'c', 'text' => 'La cantidad de luz que entra en la cámara.'],
+                    ['cod' => 'd', 'text' => 'El tamaño físico de la lente.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es la función principal de un panel de control o switcher en producción audiovisual?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'Alternar entre fuentes de video y audio en tiempo real.',
+                'category' => 'PRODUCCIÓN AUDIOVISUAL',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Tomar fotografías.'],
+                    ['cod' => 'b', 'text' => 'Mezclar audio.'],
+                    ['cod' => 'c', 'text' => 'Alternar entre fuentes de video y audio en tiempo real.'],
+                    ['cod' => 'd', 'text' => 'Proyectar imágenes en una pantalla grande.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué papel desempeña la absorción en la acústica de una sala?',
+                'examen_id' => $id,
+                'answer' => 'b',
+                'correct_answer' => 'Reducir la intensidad del sonido.',
+                'category' => 'ACÚSTICA',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Amplificar el sonido.'],
+                    ['cod' => 'b', 'text' => 'Reducir la intensidad del sonido.'],
+                    ['cod' => 'c', 'text' => 'Mejorar la calidad del sonido.'],
+                    ['cod' => 'd', 'text' => 'Crear eco.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es la unidad de medida de la frecuencia en la acústica?',
+                'examen_id' => $id,
+                'answer' => 'b',
+                'correct_answer' => 'Hertz.',
+                'category' => 'ACÚSTICA',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Decibelios.'],
+                    ['cod' => 'b', 'text' => 'Hertz.'],
+                    ['cod' => 'c', 'text' => 'Amplitud.'],
+                    ['cod' => 'd', 'text' => 'Kilogramos.'],
+                ]
+            ],
+            [
+                'text' => '¿Qué propiedad del sonido determina su tono o agudeza?',
+                'examen_id' => $id,
+                'answer' => 'b',
+                'correct_answer' => 'Frecuencia.',
+                'category' => 'ACÚSTICA',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Amplitud.'],
+                    ['cod' => 'b', 'text' => 'Frecuencia.'],
+                    ['cod' => 'c', 'text' => 'Velocidad.'],
+                    ['cod' => 'd', 'text' => 'Intensidad.'],
+                ]
+            ],
+            [
+                'text' => '¿En qué se diferencia el sonido 5.1 del sonido estéreo?',
+                'examen_id' => $id,
+                'answer' => 'a',
+                'correct_answer' => 'El sonido 5.1 tiene cinco canales de audio y un canal de bajos, mientras que el estéreo tiene dos canales.',
+                'category' => 'SONIDO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'El sonido 5.1 tiene cinco canales de audio y un canal de bajos, mientras que el estéreo tiene dos canales.'],
+                    ['cod' => 'b', 'text' => 'El sonido 5.1 es mono, mientras que el estéreo es bidireccional.'],
+                    ['cod' => 'c', 'text' => 'El sonido 5.1 utiliza un solo canal de audio, mientras que el estéreo utiliza dos.'],
+                    ['cod' => 'd', 'text' => 'El sonido 5.1 tiene dos canales de audio, mientras que el estéreo tiene cinco.'],
+                ]
+            ],
+            [
+                'text' => '¿Cuál es la principal aplicación del efecto Auto-Tune en la producción audiovisual?',
+                'examen_id' => $id,
+                'answer' => 'c',
+                'correct_answer' => 'Corregir la afinación vocal.',
+                'category' => 'SONIDO',
+                'alternativas' => [
+                    ['cod' => 'a', 'text' => 'Corregir errores de iluminación.'],
+                    ['cod' => 'b', 'text' => 'Modificar la velocidad de reproducción.'],
+                    ['cod' => 'c', 'text' => 'Corregir la afinación vocal.'],
+                    ['cod' => 'd', 'text' => 'Añadir efectos de sonido especiales.'],
+                ]
+            ]
+
+        ];
 
 
         // $preguntas = [ 
