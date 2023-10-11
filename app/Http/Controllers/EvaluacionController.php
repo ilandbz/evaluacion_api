@@ -162,7 +162,7 @@ class EvaluacionController extends Controller
 			])->with('success', '¡Formulario enviado correctamente!');
 		}
 	}
-	function register_alumno(){
+	function register_alumnoajhgdsjkhja(){
 		$especialidades = Especialidad::get();
 		return view('paginas.register', compact('especialidades'));
 	}

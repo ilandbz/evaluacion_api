@@ -32,7 +32,7 @@ class ExamenSeeder extends Seeder
             'hora_inicio'   => '12:00',
             'hora_fin'      => '23:00',
             'duracion' => 10,
-            'estado'    => 1
+            'estado'    => 0
         ]);
         Examen::firstOrCreate(
         [
@@ -78,11 +78,11 @@ class ExamenSeeder extends Seeder
         [
             'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS VI')->value('id'),
             'titulo' => 'EXAMEN DE MEDIO CURSO DE PRODUCCION AUDIOVISUAL',
-            'fecha' => '2023-10-10',
+            'fecha' => '2023-10-11',
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
             'duracion' => 10,
-            'estado'    => 0
+            'estado'    => 1
         ]);        
     }
 }

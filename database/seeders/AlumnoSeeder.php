@@ -122,6 +122,8 @@ class AlumnoSeeder extends Seeder
    ['dni'   => '75895365', 'apenom' => 'Exalto Martel Ander', 'especialidad_id' => $especialidad_id3],
    ['dni'   => '73757550', 'apenom' => 'Cámara cabello junior Jeferson ', 'especialidad_id' => $especialidad_id3],
    ['dni'   => '22513380', 'apenom' => 'Salvador Falcon Edgar', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '73756373', 'apenom' => 'Casimiro Matos Moises', 'especialidad_id' => $especialidad_id3],
+   ['dni'   => '71919353', 'apenom' => 'Isidro Carnero Jeef', 'especialidad_id' => $especialidad_id3],
             
         ];
         foreach ($alumnos as $alumno) {
