@@ -58,7 +58,17 @@ class ExamenSeeder extends Seeder
         [
             'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
             'titulo' => 'EXAMEN DE MEDIO CURSO SOFTWARE EN LA ADMINISTRACION DE BASE DE DATOS',
-            'fecha' => '2023-01-01',
+            'fecha' => '2023-10-12',
+            'hora_inicio'   => '00:00',
+            'hora_fin'      => '23:00',
+            'duracion' => 10,
+            'estado'    => 1
+        ]);
+        Examen::firstOrCreate(
+        [
+            'especialidad_id' => Especialidad::where('nombre', 'DESARROLLO DE SISTEMAS II')->value('id'),
+            'titulo' => 'EXAMEN DE MEDIO CURSO HERRAMIENTAS DE GESTION DE REDES',
+            'fecha' => '2023-10-12',
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
             'duracion' => 10,
@@ -82,7 +92,7 @@ class ExamenSeeder extends Seeder
             'hora_inicio'   => '00:00',
             'hora_fin'      => '23:00',
             'duracion' => 10,
-            'estado'    => 1
+            'estado'    => 0
         ]);        
     }
 }
